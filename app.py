@@ -116,7 +116,15 @@ def esperar_confirmacion(repo_url):
     inquirer.confirm(message='¿Ya agregaste la clave en GitHub?', default=True).execute()
 
 def probar_conexion(alias):
-    subprocess.run(['ssh', '-T', alias])
+    try:
+        console.print(f'[cyan]Probando conexión SSH con el alias {alias}...[/cyan]')
+        result = subprocess.run(['ssh', '-T', alias], check=True, capture_output=True, text=True)
+        if 'successfully authenticated' in result.stdout:
+            console.print(f'[green]Conexión exitosa con {alias}[/green]')
+        else:
+            console.print(f'[red]Error al conectar con {alias}: {result.stderr.strip()}[/red]')
+    except Exception as e:
+        console.print(f'[red]Error al probar conexión con {alias}: {e}[/red]')
 
 def pedir_repo_url():
     while True:
@@ -209,12 +217,13 @@ def main():
         key_path = generar_clave(alias)
         agregar_a_ssh_agent(key_path)
         copiar_clave_publica(key_path)
-        # --- CORREGIDO: Esperar confirmación y probar conexión ANTES de clonar ---
+        destino = seleccionar_carpeta()
+        ruta = os.path.join(destino, alias)
+        # Actualizar ssh_config ANTES de probar conexión
+        actualizar_ssh_config(alias, repo_url, ruta, key_path)
         esperar_confirmacion(repo_url)
         probar_conexion(alias)
-        destino = seleccionar_carpeta()
         ruta = clonar_repo(alias, repo_url, destino)
-        actualizar_ssh_config(alias, repo_url, ruta, key_path)
         abrir_carpeta(ruta)
         if not inquirer.confirm(message='¿Deseas clonar otro proyecto?', default=False).execute():
             console.print('[bold green]¡Hasta luego![/bold green]')
