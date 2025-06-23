@@ -1,7 +1,7 @@
 # 🚀 GitHub Auto Cloner for SSH (ID_RSA) / Clonador Automático de GitHub por SSH (ID_RSA)  
 
 <p align="center">
-  <img src="ejemplo.png" alt="Ejemplo CLI" width="500">
+  <img src="ejemplo.png" alt="Ejemplo CLI" width="700">
 </p>
 
 
@@ -73,7 +73,7 @@ python app.py
 ## 🖥️ Ejemplo de Flujo
 
 <p align="center">
-  <img src="github_settings_deploy_keys.png" alt="GitHub Deploy Keys" width="500">
+  <img src="github_settings_deploy_keys.png" alt="GitHub Deploy Keys" width="700">
 </p>
 1. Muestra proyectos registrados en `~/.ssh/config`
 2. Permite crear un nuevo alias/proyecto
