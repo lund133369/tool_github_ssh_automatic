@@ -1,24 +1,32 @@
-# 🚀 tool_clone_github
+# 🚀 GitHub Auto Cloner for SSH (ID_RSA) / Clonador Automático de GitHub por SSH (ID_RSA)  
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.8%2B-blue?logo=python" alt="Python">
-  <img src="https://img.shields.io/badge/Git-required-red?logo=git">
-  <img src="https://img.shields.io/badge/SSH-required-green?logo=openssh">
+  <img src="ejemplo.png" alt="Ejemplo CLI" width="500">
 </p>
 
+
+
 > **CLI interactivo para clonar repositorios de GitHub vía SSH, gestionando claves y configuración automáticamente, con interfaz amigable y selección de carpeta por GUI.**
+
+> ⚠️ **Actualmente solo disponible para Windows.**
+> 
+> 🟦 **Se recomienda ejecutar desde PowerShell y usar:**
+> ```powershell
+> python.exe app.py
+> ```
 
 ---
 
 ## 📑 Tabla de Contenidos
 
-- [✨ Características](#-características)
-- [⚡ Instalación](#-instalación)
-- [🔧 Requisitos](#-requisitos)
-- [🚦 Uso Rápido](#-uso-rápido)
-- [🖥️ Ejemplo de Flujo](#-ejemplo-de-flujo)
-- [💡 Notas y Consejos](#-notas-y-consejos)
-- [📂 Estructura del Proyecto](#-estructura-del-proyecto)
+- [✨ Características](#características)
+- [⚡ Instalación](#instalación)
+- [🔧 Requisitos](#requisitos)
+- [🚦 Uso Rápido](#uso-rápido)
+- [🖥️ Ejemplo de Flujo](#ejemplo-de-flujo)
+- [💡 Notas y Consejos](#notas-y-consejos)
+- [📂 Estructura del Proyecto](#estructura-del-proyecto)
+- [⏳ Pendientes](#pendientes)
 
 ---
 
@@ -64,6 +72,9 @@ python app.py
 
 ## 🖥️ Ejemplo de Flujo
 
+<p align="center">
+  <img src="github_settings_deploy_keys.png" alt="GitHub Deploy Keys" width="500">
+</p>
 1. Muestra proyectos registrados en `~/.ssh/config`
 2. Permite crear un nuevo alias/proyecto
 3. Genera clave SSH y actualiza `~/.ssh/config`
@@ -97,6 +108,14 @@ python app.py
 ├── .gitignore            # Exclusiones de git
 └── README.md             # Este archivo
 ```
+
+---
+
+## ⏳ Pendientes
+
+- [ ] FALTA VERSION PARA LINUX
+- [ ] FALTA VERSION PARA LINUX SERVER (SIN BROWSER)
+- [ ] FALTA QUE LUEGO DE CLONAR EL REPOSITORIO, ENTRAR A LA CARPETA Y CORREGIR EL SSH URL REMOTE ORIGIN
 
 ---
 
