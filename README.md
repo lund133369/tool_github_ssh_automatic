@@ -75,6 +75,7 @@ python.exe app.py
 <p align="center">
   <img src="github_settings_deploy_keys.png" alt="GitHub Deploy Keys" width="700">
 </p>
+
 1. Muestra proyectos registrados en `~/.ssh/config`
 2. Permite crear un nuevo alias/proyecto
 3. Genera clave SSH y actualiza `~/.ssh/config`
