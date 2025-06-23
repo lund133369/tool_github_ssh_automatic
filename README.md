@@ -65,7 +65,7 @@ pip install -r requirements.txt
 ## 🚦 Uso Rápido
 
 ```bash
-python app.py
+python.exe app.py
 ```
 
 ---
